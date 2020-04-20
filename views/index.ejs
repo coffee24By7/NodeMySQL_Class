@@ -1,0 +1,41 @@
+<%- include('partials/header.ejs'); -%>
+    <div class="table-wrapper">
+        <% if (restaurants.length > 0) {%>
+            <table class="table table-hovered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Establishment</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Food Type</th>
+                        <th scope="col">Seating Capacity</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% restaurants.forEach((restaurant, index) => { %>
+                        <tr>
+                            <th scope="row"><%= restaurant.id %></th>
+                            <td><img src="/assets/img/<%= restaurant.image %>" class="rounded-circle restaurant-img" alt=""></td>
+                            <td><%= restaurant.establishment %></td>
+                            <td><%= restaurant.city %></td>
+                            <td><%= restaurant.foodtype %></td>
+                            <td><%= restaurant.seating %></td>
+                            <td>@<%= restaurant.user_name %></td>
+                            <td>
+                                <a href="/edit/<%= restaurant.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+                                <a href="/delete/<%= restaurant.id %>" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p class="text-center">No restaurants found. Go <a href="/add" >here</a> to add restaurants.</p>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>

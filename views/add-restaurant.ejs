@@ -1,0 +1,41 @@
+<%- include('partials/header.ejs'); -%>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <form class="add-restaurant-form" action="" method="post" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="establishment" id="establishment" placeholder="Establishment" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="city" id="city" placeholder="City" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="seating" id="seating" placeholder="SSeating" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <select id="foodtype" name="foodtype" class="form-control" required>
+                        <option selected disabled>Choose Food Type</option>
+                        <option>Asian</option>
+                        <option>Italian</option>
+                        <option>TexMex</option>
+                        <option>Greek</option>
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <label for="restaurant-img"><b>Restaurant Image</b></label><br>
+                    <input type="file" name="image" id="restaurant-img" class="" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Add restaurant</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

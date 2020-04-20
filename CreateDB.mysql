@@ -1,0 +1,15 @@
+CREATE DATABASE ratings;
+commit;
+
+use ratings;
+CREATE TABLE IF NOT EXISTS `restaurant` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `establishment` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `foodtype` varchar(255) NOT NULL,
+  `seating` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `user_name` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+commit;
